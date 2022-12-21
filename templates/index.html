@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+{% block title %}首頁{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+  </style>
+{% endblock %}
+{% block content %}
+<div class="d-flex align-items-center justify-content-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+  <div class="lh-1">
+    <h1 class="h3 mb-0 text-white lh-1">美國二手車智慧估價系統</h1>
+  </div>
+</div>
+
+<style type="text/css">
+  .form-select {margin-bottom: .8rem;}
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h6 class="border-bottom pb-2 mb-0 text-center">特徵挑選</h6>
+
+        <div class="form-floating mb-3">
+          <input type="number" min="0" class="form-control" placeholder="horsepower" id="horsepower" value="{{data['horsepower']}}">
+          <label for="floatingInput">horsepower</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="number" min="0" class="form-control" placeholder="torque" id="torque" value="{{data['torque']}}">
+          <label for="floatingInput">torque</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="number" min="0" class="form-control" placeholder="mileage" id="mileage" value="{{data['mileage']}}">
+          <label for="floatingInput">mileage</label>
+        </div>
+
+        <div class="form-floating">
+          <select class="form-select" id="year">
+            <option value="2022" selected>2022</option>
+            {% for i in range(2021, 1914, -1) %}
+            <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+          </select>
+          <label for="year">year</label>
+        </div>
+        
+        <div class="form-floating">
+          <select class="form-select" id="engine_type">
+            <option value="1" selected>I4</option>
+            <option value="2">H6</option>
+            <option value="3">I6</option>
+            <option value="4">Other</option>
+          </select>
+          <label for="engine_type">engine type</label>
+        </div>
+        
+        <div class="form-floating">
+          <select class="form-select" id="make_name">
+            <option value="1" selected>Ford</option>
+            <option value="2">Lexus</option>
+            <option value="3">Mercedes-Benz</option>
+            <option value="4">Dodge</option>
+            <option value="5">BMW</option>
+            <option value="6">Cadillac</option>
+            <option value="7">Kia</option>
+            <option value="8">Nissan</option>
+            <option value="9">Honda</option>
+            <option value="10">Other</option>
+          </select>
+          <label for="make_name">make name</label>
+        </div>
+        
+        <div class="form-floating">
+          <select class="form-select" id="body_type">
+            <option value="1" selected>Pickup Truck</option>
+            <option value="2">Sedan</option>
+            <option value="3">SUV / Crossover</option>
+            <option value="4">Hatchback</option>
+            <option value="5">Other</option>
+          </select>
+          <label for="body_type">body type</label>
+        </div>
+        
+        <div class="form-floating">
+          <select class="form-select" id="wheel_system">
+            <option value="1" selected>FWD</option>
+            <option value="2">AWD</option>
+            <option value="3">4X2</option>
+            <option value="4">Other</option>
+          </select>
+          <label for="wheel_system">wheel system</label>
+        </div>
+        
+        <div class="form-floating">
+          <select class="form-select" id="model_name">
+            <option value="1" selected>Fusion</option>
+            <option value="2">Other</option>
+          </select>
+          <label for="model_name">model name</label>
+        </div>
+        
+        <div class="form-floating">
+          <select class="form-select" id="fuel_type">
+            <option value="1" selected>Diesel</option>
+            <option value="2">Other</option>
+          </select>
+          <label for="fuel_type">fuel type</label>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col">
+      <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h6 class="border-bottom pb-2 mb-0 text-center">預測價格</h6>
+
+        <div class="card mt-3 text-center hide" id="result-display">
+          <div class="card-header">
+            價格預測結果
+          </div>
+          <div class="card-body"></div>
+        </div>
+
+        <ul class="list-group mt-3">
+          <li class="list-group-item">
+            <i class="fa-solid fa-horse"></i>
+            horsepower: <span id="selected_horsepower"></span>
+          </li>
+          <li class="list-group-item">
+            <i class="fa-solid fa-gear"></i>
+            torque: <span id="selected_torque"></span>
+          </li>
+          <li class="list-group-item">
+            <i class="fa-solid fa-gauge"></i>
+            mileage: <span id="selected_mileage"></span>
+          </li>
+          <li class="list-group-item">
+            <i class="fa-solid fa-calendar-days"></i>
+            year: <span id="selected_year"></span>
+          </li>
+          <li class="list-group-item">
+            <i class="fa-solid fa-circle"></i>
+            engine_type: <span id="selected_engine_type"></span>
+          </li>
+          <li class="list-group-item">
+            <i class="fa-solid fa-copyright"></i>
+            make_name: <span id="selected_make_name"></span>
+          </li>
+          <li class="list-group-item">
+            <i class="fa-solid fa-car"></i>
+            body_type: <span id="selected_body_type"></span>
+          </li>
+          <li class="list-group-item">
+            <i class="fa-solid fa-circle-stop"></i>
+            wheel_system: <span id="selected_wheel_system"></span>
+          </li>
+          <li class="list-group-item">
+            <i class="fa-solid fa-barcode"></i>
+            model_name: <span id="selected_model_name"></span>
+          </li>
+          <li class="list-group-item">
+            <i class="fa-solid fa-gas-pump"></i>
+            fuel_type: <span id="selected_fuel_type"></span>
+          </li>
+        </ul>
+        
+        <div class="d-flex justify-content-center mt-4">
+          <button type="button" class="btn btn-primary" id="btn-submit">開始預測</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex align-items-center justify-content-center p-3 my-3 text-white bg-light-purple rounded shadow-sm">
+  <div class="lh-1">
+    <h1 class="h3 mb-0 lh-1 text-purple">推薦車型</h1>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
