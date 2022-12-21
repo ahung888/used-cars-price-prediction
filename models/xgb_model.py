@@ -33,6 +33,11 @@ class XGBmodel:
         'model_name_Fusion',
         'make_name_Honda'
     ]
+    default_value = {
+        'horsepower': 228,
+        'torque': 264,
+        'mileage': 1099,
+    }
     
     def __init__(self):
         filepath = path.join(path.dirname(__file__), 'xgb_model.pkl')
@@ -83,10 +88,3 @@ class XGBmodel:
             1 if make_name == 9 else 0, # make_name_Honda
         ]],
         columns=XGBmodel.cols)
-    
-    def default_value(self):
-        return {
-            'horsepower': 228,
-            'torque': 264,
-            'mileage': 1099,
-        }
