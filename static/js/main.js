@@ -18,6 +18,9 @@ let label_mapping = {
     model_name: ['','Fusion','Other'],
     fuel_type: ['','Diesel','Other'],
 }
+window.mycharts = {
+    predictResult: null,
+}
 
 function render() {
     Object.keys(form).forEach(function(key) {
@@ -31,6 +34,9 @@ function render() {
 
 $( document ).ready(function() {
     $('#btn-submit').on('click', function() {
+        $('#btn-submit').addClass('btn-lg')
+        $('#btn-submit').text('預測中...')
+        $('#btn-submit').attr('disabled', true)
         $('#result-display').hide()
 
         let data = {}
@@ -38,10 +44,14 @@ $( document ).ready(function() {
             data[key] = form[key].val()
         })
 
-        $.get("/data", data)
+        $.post("/data", data)
         .done(function( res ) {
-            $('#result-display').show()
-            $('#result-display .card-body').text(res.p)
+            $('#result-modal').modal('show')
+            window.mycharts.predictResult.animate(res.p)
+
+            $('#btn-submit').removeClass('btn-lg')
+            $('#btn-submit').text('開始預測')
+            $('#btn-submit').attr('disabled', false)
         })
     })
 

@@ -51,7 +51,7 @@ class XGBmodel:
         horsepower = request.args.get('horsepower', type=float, default=228.0)
         torque = request.args.get('torque', type=float, default=264.27)
         mileage = request.args.get('mileage', type=float, default=1099.0)
-        year = request.args.get('year', type=int, default=2020)
+        year = request.args.get('year', type=int, default=2015)
         engine_type = request.args.get('engine_type', type=int, default=0)
         make_name = request.args.get('make_name', type=int, default=0)
         body_type = request.args.get('body_type', type=int, default=0)

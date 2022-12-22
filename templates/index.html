@@ -39,7 +39,7 @@
 
         <div class="form-floating">
           <select class="form-select" id="year">
-            <option value="2022" selected>2022</option>
+            <option value="2015" selected>2015</option>
             {% for i in range(2021, 1914, -1) %}
             <option value="{{i}}">{{i}}</option>
             {% endfor %}
@@ -116,13 +116,6 @@
       <div class="my-3 p-3 bg-body rounded shadow-sm">
         <h6 class="border-bottom pb-2 mb-0 text-center">預測價格</h6>
 
-        <div class="card mt-3 text-center hide" id="result-display">
-          <div class="card-header">
-            價格預測結果
-          </div>
-          <div class="card-body"></div>
-        </div>
-
         <ul class="list-group mt-3">
           <li class="list-group-item">
             <i class="fa-solid fa-horse"></i>
@@ -179,6 +172,8 @@
     <h1 class="h3 mb-0 lh-1 text-purple">推薦車型</h1>
   </div>
 </div>
+
+{% include 'component/modal_result.html' %}
 
 {% endblock %}
 {% block scripts %}
