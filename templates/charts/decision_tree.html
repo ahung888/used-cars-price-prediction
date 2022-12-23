@@ -1,0 +1,29 @@
+<script src="{{ url_for('static', filename='js/js-image-zoom.js') }}" type="application/javascript"></script>
+<div id="decision-tree-container">
+    <img src="{{ url_for('static', filename='img/Kaggle_csv_DecisionTreePrune.png') }}" id="decision-tree" class="img-fluid" alt="Decision Tree">
+</div>
+<script>
+    (function(){
+        var options = {
+            fillContainer: true,
+            offset: {vertical: 0, horizontal: -(screen.width-200)/2}
+        };
+        let imgZoomer;
+        let side = 'init'
+        setTimeout(function(){
+            imgZoomer = new ImageZoom(document.getElementById("decision-tree-container"), options);
+        },1)
+        document.addEventListener('mousemove', function(e) {
+            if (side == 'init') {
+                side = e.pageX > screen.width/2 ? 'left' : 'right'
+            }
+            if (side == 'right' && e.pageX > screen.width/2) {
+                side = 'left'
+                imgZoomer?.setZoomPosition(side)
+            } else if (side == 'left' && e.pageX < screen.width/2) {
+                side = 'right'
+                imgZoomer?.setZoomPosition(side)
+            }
+        })
+    })()
+</script>

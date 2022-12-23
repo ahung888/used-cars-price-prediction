@@ -1,0 +1,47 @@
+<!-- Styles -->
+<style>
+    #chart_pie_transmission {
+      width: 100%;
+      height: 500px;
+    }
+</style>
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chart_pie_transmission", am4charts.PieChart);
+chart.padding(10, 100, 10, 180);
+// Add data
+chart.data = [
+{ "label": "A (自排)", "value": 2157389 },
+{ "label": "CVT (無段自排)", "value": 419793 },
+{ "label": "M (手排)", "value": 38785 },
+{ "label": "Dual Clutch (雙離合)", "value": 9943 },
+];
+
+// Add and configure Series
+var pieSeries = chart.series.push(new am4charts.PieSeries());
+pieSeries.dataFields.value = "value";
+pieSeries.dataFields.category = "label";
+pieSeries.slices.template.stroke = am4core.color("#fff");
+pieSeries.slices.template.strokeOpacity = 1;
+
+// This creates initial animation
+pieSeries.hiddenState.properties.opacity = 1;
+pieSeries.hiddenState.properties.endAngle = -90;
+pieSeries.hiddenState.properties.startAngle = -90;
+
+chart.hiddenState.properties.radius = am4core.percent(0);
+
+
+}); // end am4core.ready()
+</script>
+
+<!-- HTML -->
+<div id="chart_pie_transmission"></div>

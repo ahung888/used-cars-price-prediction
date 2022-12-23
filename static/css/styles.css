@@ -1,3 +1,7 @@
+main.container {
+  padding-bottom: 5rem;
+}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -50,5 +54,5 @@
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }

@@ -48,16 +48,16 @@ class XGBmodel:
         return float(np.around(np.exp(y_pred[0]), 2).astype(str))
 
     def get_request_data(self):
-        horsepower = request.args.get('horsepower', type=float, default=228.0)
-        torque = request.args.get('torque', type=float, default=264.27)
-        mileage = request.args.get('mileage', type=float, default=1099.0)
-        year = request.args.get('year', type=int, default=2015)
-        engine_type = request.args.get('engine_type', type=int, default=0)
-        make_name = request.args.get('make_name', type=int, default=0)
-        body_type = request.args.get('body_type', type=int, default=0)
-        wheel_system = request.args.get('wheel_system', type=int, default=0)
-        model_name = request.args.get('model_name', type=int, default=0)
-        fuel_type = request.args.get('fuel_type', type=int, default=0)
+        horsepower = request.values.get('horsepower', type=float, default=228.0)
+        torque = request.values.get('torque', type=float, default=264.27)
+        mileage = request.values.get('mileage', type=float, default=1099.0)
+        year = request.values.get('year', type=int, default=2015)
+        engine_type = request.values.get('engine_type', type=int, default=0)
+        make_name = request.values.get('make_name', type=int, default=0)
+        body_type = request.values.get('body_type', type=int, default=0)
+        wheel_system = request.values.get('wheel_system', type=int, default=0)
+        model_name = request.values.get('model_name', type=int, default=0)
+        fuel_type = request.values.get('fuel_type', type=int, default=0)
 
         return pd.DataFrame([[
             horsepower if horsepower else 228.0,

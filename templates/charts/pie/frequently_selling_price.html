@@ -1,0 +1,54 @@
+<!-- Styles -->
+<style>
+    #chart_pie_frequently_selling_price {
+      width: 100%;
+      height: 500px;
+    }
+</style>
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chart_pie_frequently_selling_price", am4charts.PieChart);
+chart.padding(10, 120, 10, 120);
+// Add data
+chart.data = [
+{ "label": "16,995", "value": 6524 },
+{ "label": "17,995", "value": 6338 },
+{ "label": "19,995", "value": 6322 },
+{ "label": "15,995", "value": 6252 },
+{ "label": "14,995", "value": 6186 },
+{ "label": "18,995", "value": 5915 },
+{ "label": "13,995", "value": 5490 },
+{ "label": "12,995", "value": 5290 },
+{ "label": "9,995", "value": 4696 },
+{ "label": "11,995", "value": 4415 },
+{ "label": "others", "value": 2538653 },
+];
+
+// Add and configure Series
+var pieSeries = chart.series.push(new am4charts.PieSeries());
+pieSeries.dataFields.value = "value";
+pieSeries.dataFields.category = "label";
+pieSeries.slices.template.stroke = am4core.color("#fff");
+pieSeries.slices.template.strokeOpacity = 1;
+
+// This creates initial animation
+pieSeries.hiddenState.properties.opacity = 1;
+pieSeries.hiddenState.properties.endAngle = -90;
+pieSeries.hiddenState.properties.startAngle = -90;
+
+chart.hiddenState.properties.radius = am4core.percent(0);
+
+
+}); // end am4core.ready()
+</script>
+
+<!-- HTML -->
+<div id="chart_pie_frequently_selling_price"></div>

@@ -1,0 +1,78 @@
+<!-- Styles -->
+<style>
+    #chart-data-preprocessing {
+      width: 100%;
+      height: 500px;
+    }
+</style>
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+let chart = am4core.create("chart-data-preprocessing", am4charts.SlicedChart);
+chart.data = [
+{
+    "name": "#1 原始資料(66欄)",
+    "value": 3000040
+}, {
+    "name": "#2 id欄位轉為index使用(65欄)",
+    "value": 3000040
+}, {
+    "name": "#3 刪除重覆資料(65欄)",
+    "value": 3000000
+}, {
+    "name": "#4 刪除空值18%以上的欄位(54欄)",
+    "value": 3000000
+}, {
+    "name": "#5 刪除欄位內容重覆的欄位(48欄)",
+    "value": 3000000
+}, {
+    "name": "#6 刪除預測值無關的欄位(39欄)",
+    "value": 3000000
+}, {
+    "name": "#7 合併同質欄位(37欄)",
+    "value": 3000000
+}, {
+    "name": "#8 刪除哩程離群的資料(37欄)",
+    "value": 2625910
+}, {
+    "name": "#9 空值填補 {均值/眾數/中位數}(37欄)",
+    "value": 2625910
+}, {
+    "name": "#10 過濾數值單位(37欄)",
+    "value": 2625910
+}
+];
+
+let setting = {
+    calculatePercent: true
+}
+let series = chart.series.push(new am4charts.FunnelSeries(setting));
+series.dataFields.value = "value";
+series.dataFields.category = "name";
+function slicePercent(text, target) {
+  var max = target.dataItem.values.value.value - target.dataItem.values.value.startChange;
+  var percent = (target.dataItem.values.value.value / max * 100).toFixed(2);
+  return "{category}: " + percent + "%";
+}
+// series.labels.template.adapter.add("text", slicePercent);
+series.tooltip.label.adapter.add("text", slicePercent);
+
+var fillModifier = new am4core.LinearGradientModifier();
+fillModifier.brightnesses = [-0.5, 1, -0.5];
+fillModifier.offsets = [0, 0.5, 1];
+series.slices.template.fillModifier = fillModifier;
+series.alignLabels = true;
+
+series.labels.template.text = "{category}: [bold]{value}[/]";
+
+}); // end am4core.ready()
+</script>
+
+<!-- HTML -->
+<div id="chart-data-preprocessing"></div>

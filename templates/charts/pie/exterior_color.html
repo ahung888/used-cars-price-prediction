@@ -1,0 +1,57 @@
+<!-- Styles -->
+<style>
+    #chart_pie_exterior_color {
+      width: 100%;
+      height: 500px;
+    }
+</style>
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chart_pie_exterior_color", am4charts.PieChart);
+chart.padding(10, 120, 10, 120);
+// Add data
+chart.data = [
+{ "label": "Other Color", "value": 638033 },
+{ "label": "White", "value": 560205 },
+{ "label": "Black", "value": 478564 },
+{ "label": "Silver", "value": 300060 },
+{ "label": "Blue", "value": 204736 },
+{ "label": "Red", "value": 198206 },
+{ "label": "Gray", "value": 189184 },
+{ "label": "Green", "value": 15653 },
+{ "label": "Mixed Colors", "value": 10682 },
+{ "label": "Orange", "value": 9428 },
+{ "label": "Brown", "value": 9028 },
+{ "label": "Gold", "value": 5215 },
+{ "label": "Yellow", "value": 3829 },
+{ "label": "Beige", "value": 3087 },
+];
+
+// Add and configure Series
+var pieSeries = chart.series.push(new am4charts.PieSeries());
+pieSeries.dataFields.value = "value";
+pieSeries.dataFields.category = "label";
+pieSeries.slices.template.stroke = am4core.color("#fff");
+pieSeries.slices.template.strokeOpacity = 1;
+
+// This creates initial animation
+pieSeries.hiddenState.properties.opacity = 1;
+pieSeries.hiddenState.properties.endAngle = -90;
+pieSeries.hiddenState.properties.startAngle = -90;
+
+chart.hiddenState.properties.radius = am4core.percent(0);
+
+
+}); // end am4core.ready()
+</script>
+
+<!-- HTML -->
+<div id="chart_pie_exterior_color"></div>

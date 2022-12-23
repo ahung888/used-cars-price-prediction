@@ -1,0 +1,241 @@
+{% extends "layout.html" %}
+{% block title %}圖表分析{% endblock %}
+{% block content %}
+<div class="d-flex align-items-center justify-content-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+  <div class="lh-1">
+    <h1 class="h3 mb-0 text-white lh-1">美國二手車資料集-圖表分析</h1>
+  </div>
+</div>
+
+<style type="text/css">
+  .form-select {margin-bottom: .8rem;}
+</style>
+
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom pb-2 mb-3 text-center">資料前置處理</h6>
+    <div class="d-flex text-muted">
+        {% include 'charts/data_preprocessing.html' %}
+    </div>
+</div>
+
+<div class="container p-0">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="my-3 p-3 bg-body rounded shadow-sm">
+                <h6 class="border-bottom pb-2 mb-3 text-center">車輛製造商</h6>
+                <div class="make_name hist d-flex text-muted">
+                    {% include 'charts/hist/make_name.html' %}
+                </div>
+                <div class="make_name pie d-flex text-muted hide">
+                    {% include 'charts/pie/make_name.html' %}
+                </div>
+                <div class="d-flex justify-content-end gap-1">
+                    <button data-feature="make_name" data-chart="hist" type="button" class="btn-chart-hist btn btn-secondary btn-sm"><i class="fa-solid fa-chart-simple"></i></button>
+                    <button data-feature="make_name" data-chart="pie" type="button" class="btn-chart-pie btn btn-outline-secondary btn-sm"><i class="fa-solid fa-chart-pie"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="my-3 p-3 bg-body rounded shadow-sm">
+                <h6 class="border-bottom pb-2 mb-3 text-center">車身類型</h6>
+                <div class="body_type hist d-flex text-muted">
+                    {% include 'charts/hist/body_type.html' %}
+                </div>
+                <div class="body_type pie d-flex text-muted hide">
+                    {% include 'charts/pie/body_type.html' %}
+                </div>
+                <div class="d-flex justify-content-end gap-1">
+                    <button data-feature="body_type" data-chart="hist" type="button" class="btn-chart-hist btn btn-secondary btn-sm"><i class="fa-solid fa-chart-simple"></i></button>
+                    <button data-feature="body_type" data-chart="pie" type="button" class="btn-chart-pie btn btn-outline-secondary btn-sm"><i class="fa-solid fa-chart-pie"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container p-0">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="my-3 p-3 bg-body rounded shadow-sm">
+                <h6 class="border-bottom pb-2 mb-3 text-center">車型名稱</h6>
+                <div class="model_name hist d-flex text-muted">
+                    {% include 'charts/hist/model_name.html' %}
+                </div>
+                <div class="model_name pie d-flex text-muted hide">
+                    {% include 'charts/pie/model_name.html' %}
+                </div>
+                <div class="d-flex justify-content-end gap-1">
+                    <button data-feature="model_name" data-chart="hist" type="button" class="btn-chart-hist btn btn-secondary btn-sm"><i class="fa-solid fa-chart-simple"></i></button>
+                    <button data-feature="model_name" data-chart="pie" type="button" class="btn-chart-pie btn btn-outline-secondary btn-sm"><i class="fa-solid fa-chart-pie"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="my-3 p-3 bg-body rounded shadow-sm">
+                <h6 class="border-bottom pb-2 mb-3 text-center">引擎類別</h6>
+                <div class="engine_type hist d-flex text-muted">
+                    {% include 'charts/hist/engine_type.html' %}
+                </div>
+                <div class="engine_type pie d-flex text-muted hide">
+                    {% include 'charts/pie/engine_type.html' %}
+                </div>
+                <div class="d-flex justify-content-end gap-1">
+                    <button data-feature="engine_type" data-chart="hist" type="button" class="btn-chart-hist btn btn-secondary btn-sm"><i class="fa-solid fa-chart-simple"></i></button>
+                    <button data-feature="engine_type" data-chart="pie" type="button" class="btn-chart-pie btn btn-outline-secondary btn-sm"><i class="fa-solid fa-chart-pie"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container p-0">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="my-3 p-3 bg-body rounded shadow-sm">
+                <h6 class="border-bottom pb-2 mb-3 text-center">外型主色</h6>
+                <div class="exterior_color hist d-flex text-muted">
+                    {% include 'charts/hist/exterior_color.html' %}
+                </div>
+                <div class="exterior_color pie d-flex text-muted hide">
+                    {% include 'charts/pie/exterior_color.html' %}
+                </div>
+                <div class="d-flex justify-content-end gap-1">
+                    <button data-feature="exterior_color" data-chart="hist" type="button" class="btn-chart-hist btn btn-secondary btn-sm"><i class="fa-solid fa-chart-simple"></i></button>
+                    <button data-feature="exterior_color" data-chart="pie" type="button" class="btn-chart-pie btn btn-outline-secondary btn-sm"><i class="fa-solid fa-chart-pie"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="my-3 p-3 bg-body rounded shadow-sm">
+                <h6 class="border-bottom pb-2 mb-3 text-center">內部主色</h6>
+                <div class="interior_color hist d-flex text-muted">
+                    {% include 'charts/hist/interior_color.html' %}
+                </div>
+                <div class="interior_color pie d-flex text-muted hide">
+                    {% include 'charts/pie/interior_color.html' %}
+                </div>
+                <div class="d-flex justify-content-end gap-1">
+                    <button data-feature="interior_color" data-chart="hist" type="button" class="btn-chart-hist btn btn-secondary btn-sm"><i class="fa-solid fa-chart-simple"></i></button>
+                    <button data-feature="interior_color" data-chart="pie" type="button" class="btn-chart-pie btn btn-outline-secondary btn-sm"><i class="fa-solid fa-chart-pie"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container p-0">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="my-3 p-3 bg-body rounded shadow-sm">
+                <h6 class="border-bottom pb-2 mb-3 text-center">變速箱類型</h6>
+                <div class="transmission hist d-flex text-muted">
+                    {% include 'charts/hist/transmission.html' %}
+                </div>
+                <div class="transmission pie d-flex text-muted hide">
+                    {% include 'charts/pie/transmission.html' %}
+                </div>
+                <div class="d-flex justify-content-end gap-1">
+                    <button data-feature="transmission" data-chart="hist" type="button" class="btn-chart-hist btn btn-secondary btn-sm"><i class="fa-solid fa-chart-simple"></i></button>
+                    <button data-feature="transmission" data-chart="pie" type="button" class="btn-chart-pie btn btn-outline-secondary btn-sm"><i class="fa-solid fa-chart-pie"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="my-3 p-3 bg-body rounded shadow-sm">
+                <h6 class="border-bottom pb-2 mb-3 text-center">傳動系統</h6>
+                <div class="wheel_system hist d-flex text-muted">
+                    {% include 'charts/hist/wheel_system.html' %}
+                </div>
+                <div class="wheel_system pie d-flex text-muted hide">
+                    {% include 'charts/pie/wheel_system.html' %}
+                </div>
+                <div class="d-flex justify-content-end gap-1">
+                    <button data-feature="wheel_system" data-chart="hist" type="button" class="btn-chart-hist btn btn-secondary btn-sm"><i class="fa-solid fa-chart-simple"></i></button>
+                    <button data-feature="wheel_system" data-chart="pie" type="button" class="btn-chart-pie btn btn-outline-secondary btn-sm"><i class="fa-solid fa-chart-pie"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container p-0">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="my-3 p-3 bg-body rounded shadow-sm">
+                <h6 class="border-bottom pb-2 mb-3 text-center">常見售價</h6>
+                <div class="frequently_selling_price hist d-flex text-muted">
+                    {% include 'charts/hist/frequently_selling_price.html' %}
+                </div>
+                <div class="frequently_selling_price pie d-flex text-muted hide">
+                    {% include 'charts/pie/frequently_selling_price.html' %}
+                </div>
+                <div class="d-flex justify-content-end gap-1">
+                    <button data-feature="frequently_selling_price" data-chart="hist" type="button" class="btn-chart-hist btn btn-secondary btn-sm"><i class="fa-solid fa-chart-simple"></i></button>
+                    <button data-feature="frequently_selling_price" data-chart="pie" type="button" class="btn-chart-pie btn btn-outline-secondary btn-sm"><i class="fa-solid fa-chart-pie"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="my-3 p-3 bg-body rounded shadow-sm">
+                <h6 class="border-bottom pb-2 mb-3 text-center">賣家評價</h6>
+                <div class="seller_rating hist d-flex text-muted">
+                    {% include 'charts/hist/seller_rating.html' %}
+                </div>
+                <div class="seller_rating pie d-flex text-muted hide">
+                    {% include 'charts/pie/seller_rating.html' %}
+                </div>
+                <div class="d-flex justify-content-end gap-1">
+                    <button data-feature="seller_rating" data-chart="hist" type="button" class="btn-chart-hist btn btn-secondary btn-sm"><i class="fa-solid fa-chart-simple"></i></button>
+                    <button data-feature="seller_rating" data-chart="pie" type="button" class="btn-chart-pie btn btn-outline-secondary btn-sm"><i class="fa-solid fa-chart-pie"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom pb-2 mb-3 text-center">燃料類型</h6>
+    <div class="fuel_type hist d-flex text-muted">
+        {% include 'charts/hist/fuel_type.html' %}
+    </div>
+    <div class="fuel_type pie d-flex text-muted hide">
+        {% include 'charts/pie/fuel_type.html' %}
+    </div>
+    <div class="d-flex justify-content-end gap-1">
+        <button data-feature="fuel_type" data-chart="hist" type="button" class="btn-chart-hist btn btn-secondary btn-sm"><i class="fa-solid fa-chart-simple"></i></button>
+        <button data-feature="fuel_type" data-chart="pie" type="button" class="btn-chart-pie btn btn-outline-secondary btn-sm"><i class="fa-solid fa-chart-pie"></i></button>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pre_scripts %}
+<!-- Resources - amcharts -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+{% endblock %}
+
+{% block post_scripts %}
+<script>
+window.onload = function() {
+    $('button[class^="btn-chart-"]').on('click', function() {
+        let elem = this,
+            btn = $(this),
+            feature = btn.data('feature'),
+            chart = btn.data('chart')
+        $('.'+feature).addClass('hide')
+        $('.'+feature+'.'+chart).removeClass('hide')
+        $('button[data-feature="'+feature+'"').map(function(i,e) {
+            if (e === elem) {
+                btn.removeClass('btn-outline-secondary')
+                btn.addClass('btn-secondary')
+            } else {
+                $(e).removeClass('btn-secondary')
+                $(e).addClass('btn-outline-secondary')
+            }
+        })
+    })
+}
+</script>
+{% endblock %}

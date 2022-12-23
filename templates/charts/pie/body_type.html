@@ -1,0 +1,52 @@
+<!-- Styles -->
+<style>
+    #chart_pie_body_type {
+      width: 100%;
+      height: 500px;
+    }
+</style>
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chart_pie_body_type", am4charts.PieChart);
+chart.padding(10, 120, 10, 120);
+// Add data
+chart.data = [
+{ "label": "SUV / Crossover", "value": 1429928 },
+{ "label": "Sedan", "value": 742026 },
+{ "label": "Pickup Truck", "value": 474587 },
+{ "label": "Hatchback", "value": 88373 },
+{ "label": "Minivan", "value": 79802 },
+{ "label": "Coupe", "value": 71605 },
+{ "label": "Van", "value": 47166 },
+{ "label": "Wagon", "value": 40503 },
+{ "label": "Convertible", "value": 26010 },
+];
+
+// Add and configure Series
+var pieSeries = chart.series.push(new am4charts.PieSeries());
+pieSeries.dataFields.value = "value";
+pieSeries.dataFields.category = "label";
+pieSeries.slices.template.stroke = am4core.color("#fff");
+pieSeries.slices.template.strokeOpacity = 1;
+
+// This creates initial animation
+pieSeries.hiddenState.properties.opacity = 1;
+pieSeries.hiddenState.properties.endAngle = -90;
+pieSeries.hiddenState.properties.startAngle = -90;
+
+chart.hiddenState.properties.radius = am4core.percent(0);
+
+
+}); // end am4core.ready()
+</script>
+
+<!-- HTML -->
+<div id="chart_pie_body_type"></div>
