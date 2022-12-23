@@ -18,10 +18,10 @@ let label_mapping = {
     model_name: ['','Altima','Camry','Civic','Corolla','Equinox','Escape','Explorer','F-150','Fusion','Malibu','Rogue','Silverado 1500','Trax'],
     fuel_type: ['','Gasoline','Diesel','Electric','Other'],
 }
-
 window.mycharts = {
     predictResult: null,
 }
+
 function getElement(key) {
     if (key in form) {
         let type = form[key]
@@ -51,6 +51,7 @@ function render() {
             val = label_mapping[key][parseInt(val)]
         }
         $('#selected_'+key).text(val)
+        $('#'+key+'_display').text(getInputValue(key))
     })
 }
 

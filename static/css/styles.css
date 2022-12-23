@@ -56,6 +56,9 @@ main.container {
 .hide {
   display: none !important;
 }
+.pointer {
+  cursor: pointer;
+}
 
 .floatingRange {
   display: block;
@@ -78,4 +81,7 @@ main.container {
   -moz-appearance: none;
   appearance: none;
   margin-bottom: 0.625rem;
+}
+.floatingRange:last-child {
+  margin-bottom: 0;
 }

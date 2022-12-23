@@ -1,0 +1,547 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <h6 class="border-bottom pb-2 mb-3 text-center">特徵挑選</h6>
+
+            <div class="card mb-3">
+                <div class="card-header list-group-item-primary pointer" data-bs-toggle="collapse" data-bs-target="#collapse_car_performance" aria-expanded="true" aria-controls="collapse_car_performance">
+                    車輛性能
+                </div>
+                <div class="collapse show p-2" id="collapse_car_performance">
+
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-horse"></i> horsepower: <span id="horsepower_display"></span> hp</label>
+                        <input type="range" class="form-range" min="55" max="1010" id="horsepower" value="170">
+                    </div>
+            
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-gear"></i> torque: <span id="torque_display"></span> kmph</label>
+                        <input type="range" class="form-range" min="60" max="1000" id="torque" value="264">
+                    </div>
+            
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-header list-group-item-success pointer" data-bs-toggle="collapse" data-bs-target="#collapse_car_appearance" aria-expanded="true" aria-controls="collapse_car_appearance">
+                    車輛外觀
+                </div>
+                <div class="collapse show p-2" id="collapse_car_appearance">
+
+                    <div class="floatingRange">
+                        <label for="body_type"><i class="fa-solid fa-car"></i> body type</label>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="body_type" id="body_type1" value="1">
+                            <label class="btn btn-outline-warning" for="body_type1">Hatchback</label>
+                            <input type="radio" class="btn-check" name="body_type" id="body_type2" value="2">
+                            <label class="btn btn-outline-warning" for="body_type2">Pickup Truck</label>
+                        </div>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="body_type" id="body_type3" value="3" checked>
+                            <label class="btn btn-outline-warning" for="body_type3">SUV / Crossover</label>
+                            <input type="radio" class="btn-check" name="body_type" id="body_type4" value="4">
+                            <label class="btn btn-outline-warning" for="body_type4">Sedan</label>
+                            <input type="radio" class="btn-check" name="body_type" id="body_type5" value="5">
+                            <label class="btn btn-outline-warning" for="body_type5">Wagon</label>
+                        </div>
+                    </div>
+                      
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-chair"></i> maximum_seating: <span id="maximum_seating_display"></span> seats</label>
+                        <input type="range" class="form-range" min="2" max="15" id="maximum_seating" value="4">
+                    </div>
+                      
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-shoe-prints"></i> legroom: <span id="legroom_display"></span> in</label>
+                        <input type="range" class="form-range" min="0" max="105" id="legroom" value="79">
+                    </div>
+                    
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-camera"></i> major_options_count: <span id="major_options_count_display"></span></label>
+                        <input type="range" class="form-range" min="0" max="60" id="major_options_count" value="0">
+                    </div>
+
+                    <div class="floatingRange">
+                        <label for="exterior_color"><i class="fa-solid fa-brush"></i> exterior color</label>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color1" value="1" checked>
+                            <label class="btn btn-outline-dark" for="exterior_color1">White</label>
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color2" value="2">
+                            <label class="btn btn-outline-dark" for="exterior_color2">Black</label>
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color3" value="3">
+                            <label class="btn btn-outline-dark" for="exterior_color3">Silver</label>
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color4" value="4">
+                            <label class="btn btn-outline-dark" for="exterior_color4">Blue</label>
+                          </div>
+                          <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color5" value="5">
+                            <label class="btn btn-outline-dark" for="exterior_color5">Red</label>
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color6" value="6">
+                            <label class="btn btn-outline-dark" for="exterior_color6">Gray</label>
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color7" value="7">
+                            <label class="btn btn-outline-dark" for="exterior_color7">Green</label>
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color8" value="8">
+                            <label class="btn btn-outline-dark" for="exterior_color8">Orange</label>
+                          </div>
+                          <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color9" value="9">
+                            <label class="btn btn-outline-dark" for="exterior_color9">Brown</label>
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color10" value="10">
+                            <label class="btn btn-outline-dark" for="exterior_color10">Gold</label>
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color11" value="11">
+                            <label class="btn btn-outline-dark" for="exterior_color11">Yellow</label>
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color12" value="12">
+                            <label class="btn btn-outline-dark" for="exterior_color12">Beige</label>
+                          </div>
+                          <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color13" value="13">
+                            <label class="btn btn-outline-dark" for="exterior_color13">Mixed colors</label>
+                            <input type="radio" class="btn-check" name="exterior_color" id="exterior_color14" value="14">
+                            <label class="btn btn-outline-dark" for="exterior_color14">Others</label>
+                        </div>
+                    </div>
+
+                    <div class="floatingRange">
+                        <label for="interior_color"><i class="fa-solid fa-brush"></i> interior color</label>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color1" value="1" checked>
+                            <label class="btn btn-outline-dark" for="interior_color1">Black</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color2" value="2">
+                            <label class="btn btn-outline-dark" for="interior_color2">Gray</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color3" value="3">
+                            <label class="btn btn-outline-dark" for="interior_color3">White</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color4" value="4">
+                            <label class="btn btn-outline-dark" for="interior_color4">Beige</label>
+                        </div>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color5" value="5">
+                            <label class="btn btn-outline-dark" for="interior_color5">Brown</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color6" value="6">
+                            <label class="btn btn-outline-dark" for="interior_color6">Black</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color7" value="7">
+                            <label class="btn btn-outline-dark" for="interior_color7">Red</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color8" value="8">
+                            <label class="btn btn-outline-dark" for="interior_color8">Silver</label>
+                        </div>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color9" value="9">
+                            <label class="btn btn-outline-dark" for="interior_color9">Blue</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color10" value="10">
+                            <label class="btn btn-outline-dark" for="interior_color10">Green</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color11" value="11">
+                            <label class="btn btn-outline-dark" for="interior_color11">Gold</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color12" value="12">
+                            <label class="btn btn-outline-dark" for="interior_color12">Orange</label>
+                        </div>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color13" value="13">
+                            <label class="btn btn-outline-dark" for="interior_color13">Yellow</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color14" value="14">
+                            <label class="btn btn-outline-dark" for="interior_color14">Purple</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color15" value="15">
+                            <label class="btn btn-outline-dark" for="interior_color15">Mixed colors</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color16" value="16">
+                            <label class="btn btn-outline-dark" for="interior_color16">Others</label>
+                        </div>
+                    </div>
+                    
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-camera"></i> length: <span id="length_display"></span> in</label>
+                        <input type="range" class="form-range" min="106" max="290" id="length" value="190">
+                    </div>
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-camera"></i> width: <span id="width_display"></span> in</label>
+                        <input type="range" class="form-range" min="42" max="109" id="width" value="72">
+                    </div>
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-camera"></i> height: <span id="height_display"></span> in</label>
+                        <input type="range" class="form-range" min="43" max="118" id="height" value="66">
+                    </div>
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-camera"></i> wheelbase: <span id="wheelbase_display"></span> in</label>
+                        <input type="range" class="form-range" min="73" max="201" id="wheelbase" value="111">
+                    </div>
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-camera"></i> fuel_tank_volume: <span id="fuel_tank_volume_display"></span>  gal</label>
+                        <input type="range" class="form-range" min="0" max="64" id="fuel_tank_volume" value="26">
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-header list-group-item-danger pointer" data-bs-toggle="collapse" data-bs-target="#collapse_car_system" aria-expanded="true" aria-controls="collapse_car_system">
+                    車輛系統
+                </div>
+                <div class="collapse show p-2" id="collapse_car_system">
+
+                    <div class="floatingRange">
+                        <label for="transmission"><i class="fa-solid fa-cash-register"></i> transmission</label>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                          <input type="radio" class="btn-check" name="transmission" id="transmission1" value="1" checked>
+                          <label class="btn btn-outline-primary" for="transmission1">A</label>
+                          <input type="radio" class="btn-check" name="transmission" id="transmission2" value="2">
+                          <label class="btn btn-outline-primary" for="transmission2">CVT</label>
+                          <input type="radio" class="btn-check" name="transmission" id="transmission3" value="3">
+                          <label class="btn btn-outline-primary" for="transmission3">M</label>
+                          <input type="radio" class="btn-check" name="transmission" id="transmission4" value="4">
+                          <label class="btn btn-outline-primary" for="transmission4">Dual Clutch</label>
+                        </div>
+                      </div>
+                      
+                      <div class="floatingRange">
+                        <label for="engine_type"><i class="fa-solid fa-circle"></i> engine type</label>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                          <input type="radio" class="btn-check" name="engine_type" id="engine_type1" value="1">
+                          <label class="btn btn-outline-primary" for="engine_type1">Gasoline engine</label>
+                          <input type="radio" class="btn-check" name="engine_type" id="engine_type2" value="2">
+                          <label class="btn btn-outline-primary" for="engine_type2">H6</label>
+                          <input type="radio" class="btn-check" name="engine_type" id="engine_type3" value="3" checked>
+                          <label class="btn btn-outline-primary" for="engine_type3">I4</label>
+                          <input type="radio" class="btn-check" name="engine_type" id="engine_type4" value="4">
+                          <label class="btn btn-outline-primary" for="engine_type4">I5</label>
+                          <input type="radio" class="btn-check" name="engine_type" id="engine_type5" value="5">
+                          <label class="btn btn-outline-primary" for="engine_type5">I6</label>
+                        </div>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                          <input type="radio" class="btn-check" name="engine_type" id="engine_type6" value="6">
+                          <label class="btn btn-outline-primary" for="engine_type6">V6</label>
+                          <input type="radio" class="btn-check" name="engine_type" id="engine_type7" value="7">
+                          <label class="btn btn-outline-primary" for="engine_type7">V8</label>
+                          <input type="radio" class="btn-check" name="engine_type" id="engine_type8" value="8">
+                          <label class="btn btn-outline-primary" for="engine_type8">V12</label>
+                          <input type="radio" class="btn-check" name="engine_type" id="engine_type9" value="9">
+                          <label class="btn btn-outline-primary" for="engine_type9">Other</label>
+                        </div>
+                      </div>
+                                
+                    <div class="floatingRange">
+                        <label for="make_name"><i class="fa-solid fa-copyright"></i> make name</label>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="make_name" id="make_name1" value="1">
+                            <label class="btn btn-outline-dark" for="make_name1">BMW</label>
+                            <input type="radio" class="btn-check" name="make_name" id="make_name2" value="2">
+                            <label class="btn btn-outline-dark" for="make_name2">Cadillac</label>
+                            <input type="radio" class="btn-check" name="make_name" id="make_name3" value="3">
+                            <label class="btn btn-outline-dark" for="make_name3">Dodge</label>
+                            <input type="radio" class="btn-check" name="make_name" id="make_name4" value="4" checked>
+                            <label class="btn btn-outline-dark" for="make_name4">Ford</label>
+                        </div>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="make_name" id="make_name5" value="5">
+                            <label class="btn btn-outline-dark" for="make_name5">GMC</label>
+                            <input type="radio" class="btn-check" name="make_name" id="make_name6" value="6">
+                            <label class="btn btn-outline-dark" for="make_name6">Honda</label>
+                            <input type="radio" class="btn-check" name="make_name" id="make_name7" value="7">
+                            <label class="btn btn-outline-dark" for="make_name7">Hyundai</label>
+                            <input type="radio" class="btn-check" name="make_name" id="make_name8" value="8">
+                            <label class="btn btn-outline-dark" for="make_name8">Kia</label>
+                        </div>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="make_name" id="make_name9" value="9">
+                            <label class="btn btn-outline-dark" for="make_name9">Lexus</label>
+                            <input type="radio" class="btn-check" name="make_name" id="make_name10" value="10">
+                            <label class="btn btn-outline-dark" for="make_name10">Mercedes-Benz</label>
+                            <input type="radio" class="btn-check" name="make_name" id="make_name11" value="11">
+                            <label class="btn btn-outline-dark" for="make_name11">Nissan</label>
+                        </div>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="make_name" id="make_name12" value="12">
+                            <label class="btn btn-outline-dark" for="make_name12">RAM</label>
+                            <input type="radio" class="btn-check" name="make_name" id="make_name13" value="13">
+                            <label class="btn btn-outline-dark" for="make_name13">Volkswagen</label>
+                            <input type="radio" class="btn-check" name="make_name" id="make_name14" value="14">
+                            <label class="btn btn-outline-dark" for="make_name14">Other</label>
+                        </div>
+                    </div>
+                    
+                    <div class="floatingRange">
+                        <label for="model_name"><i class="fa-solid fa-barcode"></i> model name</label>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="model_name" id="model_name1" value="1">
+                            <label class="btn btn-outline-secondary" for="model_name1">Altima</label>
+                            <input type="radio" class="btn-check" name="model_name" id="model_name2" value="2">
+                            <label class="btn btn-outline-secondary" for="model_name2">Camry</label>
+                            <input type="radio" class="btn-check" name="model_name" id="model_name3" value="3">
+                            <label class="btn btn-outline-secondary" for="model_name3">Civic</label>
+                            <input type="radio" class="btn-check" name="model_name" id="model_name4" value="4">
+                            <label class="btn btn-outline-secondary" for="model_name4">Corolla</label>
+                        </div>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="model_name" id="model_name5" value="5">
+                            <label class="btn btn-outline-secondary" for="model_name5">Equinox</label>
+                            <input type="radio" class="btn-check" name="model_name" id="model_name6" value="6">
+                            <label class="btn btn-outline-secondary" for="model_name6">Escape</label>
+                            <input type="radio" class="btn-check" name="model_name" id="model_name7" value="7">
+                            <label class="btn btn-outline-secondary" for="model_name7">Explorer</label>
+                            <input type="radio" class="btn-check" name="model_name" id="model_name8" value="8" checked>
+                            <label class="btn btn-outline-secondary" for="model_name8">F-150</label>
+                        </div>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="model_name" id="model_name9" value="9">
+                            <label class="btn btn-outline-secondary" for="model_name9">Fusion</label>
+                            <input type="radio" class="btn-check" name="model_name" id="model_name10" value="10">
+                            <label class="btn btn-outline-secondary" for="model_name10">Malibu</label>
+                            <input type="radio" class="btn-check" name="model_name" id="model_name11" value="11">
+                            <label class="btn btn-outline-secondary" for="model_name11">Rogue</label>
+                        </div>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="model_name" id="model_name12" value="12">
+                            <label class="btn btn-outline-secondary" for="model_name12">Silverado 1500</label>
+                            <input type="radio" class="btn-check" name="model_name" id="model_name13" value="13">
+                            <label class="btn btn-outline-secondary" for="model_name13">Trax</label>
+                            <input type="radio" class="btn-check" name="model_name" id="model_name14" value="14">
+                            <label class="btn btn-outline-secondary" for="model_name14">Other</label>
+                        </div>
+                    </div>
+                    
+                    <div class="floatingRange">
+                        <label for="wheel_system"><i class="fa-solid fa-circle-stop"></i> wheel system</label>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="wheel_system" id="wheel_system1" value="1" checked>
+                            <label class="btn btn-outline-danger" for="wheel_system1">FWD</label>
+                            <input type="radio" class="btn-check" name="wheel_system" id="wheel_system2" value="2">
+                            <label class="btn btn-outline-danger" for="wheel_system2">AWD</label>
+                            <input type="radio" class="btn-check" name="wheel_system" id="wheel_system3" value="3">
+                            <label class="btn btn-outline-danger" for="wheel_system3">4WD</label>
+                            <input type="radio" class="btn-check" name="wheel_system" id="wheel_system4" value="4">
+                            <label class="btn btn-outline-danger" for="wheel_system4">RWD</label>
+                            <input type="radio" class="btn-check" name="wheel_system" id="wheel_system5" value="5">
+                            <label class="btn btn-outline-danger" for="wheel_system5">4X2</label>
+                        </div>
+                    </div>
+                    
+                    <div class="floatingRange">
+                        <label for="fuel_type"><i class="fa-solid fa-gas-pump"></i> fuel type</label>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="fuel_type" id="fuel_type1" value="1" checked>
+                            <label class="btn btn-outline-success" for="fuel_type1">Gasoline</label>
+                            <input type="radio" class="btn-check" name="fuel_type" id="fuel_type2" value="2">
+                            <label class="btn btn-outline-success" for="fuel_type2">Diesel</label>
+                            <input type="radio" class="btn-check" name="fuel_type" id="fuel_type3" value="3">
+                            <label class="btn btn-outline-success" for="fuel_type3">Electric</label>
+                            <input type="radio" class="btn-check" name="fuel_type" id="fuel_type4" value="4">
+                            <label class="btn btn-outline-success" for="fuel_type4">Other</label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-header list-group-item-warning pointer" data-bs-toggle="collapse" data-bs-target="#collapse_car_condition" aria-expanded="true" aria-controls="collapse_car_condition">
+                    車輛狀況
+                </div>
+                <div class="collapse show p-2" id="collapse_car_condition">
+
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-gauge"></i> mileage: <span id="mileage_display"></span> mi</label>
+                        <input type="range" class="form-range" min="0" max="120000" id="mileage" value="20835">
+                    </div>
+              
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-calendar-days"></i> year: <span id="year_display"></span></label>
+                        <input type="range" class="form-range" min="1915" max="2025" id="year" value="2018">
+                    </div>
+            
+                    <div class="floatingRange">
+                        <label for="has_incidents"><i class="fa-solid fa-car-burst"></i> has incidents</label>
+                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="has_incidents" id="has_incidents1" value="0" checked>
+                        <label class="btn btn-outline-primary" for="has_incidents1">NO</label>
+                        <input type="radio" class="btn-check" name="has_incidents" id="has_incidents2" value="1">
+                        <label class="btn btn-outline-primary" for="has_incidents2">YES</label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header list-group-item-secondary pointer" data-bs-toggle="collapse" data-bs-target="#collapse_others" aria-expanded="true" aria-controls="collapse_others">
+                    其它條件
+                </div>
+                <div class="collapse show p-2" id="collapse_others">
+
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-cart-shopping"></i> daysonmarket: <span id="daysonmarket_display"></span> days</label>
+                        <input type="range" class="form-range" min="0" max="4000" id="daysonmarket" value="36">
+                    </div>
+                      
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-dollar-sign"></i> savings_amount: <span id="savings_amount_display"></span> USD</label>
+                        <input type="range" class="form-range" min="0" max="150000" id="savings_amount" value="0">
+                    </div>
+                    
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-money-bill"></i> combined_fuel_economy: <span id="combined_fuel_economy_display"></span> MPG</label>
+                        <input type="range" class="form-range" min="9" max="130" id="combined_fuel_economy" value="26">
+                    </div>
+                    
+                    <div class="floatingRange">
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-star"></i> seller_rating: <span id="seller_rating_display"></span></label>
+                        <input type="range" class="form-range" min="1" max="5" id="seller_rating" value="4">
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+<!--           
+
+          'size_of_vehicle': 456.5,
+          size_of_vehicle = length + width + height + wheelbase + fuel_tank_volume
+
+          length: 106-290 / 190
+          width: 42-109 / 72
+          height: 43-118 / 66
+          wheelbase: 73-201 / 111
+          fuel_tank_volume: 0-64 / 26
+
+  -->
+
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+          <h6 class="border-bottom pb-2 mb-0 text-center">預測價格</h6>
+  
+          <ul class="list-group mt-3">
+            <li class="list-group-item list-group-item-action list-group-item-primary">車輛性能</li>
+            <li class="list-group-item">
+                <i class="fa-solid fa-horse"></i>
+                horsepower: <span id="selected_horsepower"></span> hp
+            </li>
+            <li class="list-group-item">
+                <i class="fa-solid fa-gear"></i>
+                torque: <span id="selected_torque"></span> kmph
+            </li>
+          </ul>
+
+          <ul class="list-group mt-3">
+            <li class="list-group-item list-group-item-action list-group-item-success">車輛外觀</li>
+            
+            <li class="list-group-item">
+                <i class="fa-solid fa-car"></i>
+                body_type: <span id="selected_body_type"></span>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-chair"></i>
+                maximum_seating: <span id="selected_maximum_seating"></span> seats
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-shoe-prints"></i>
+                legroom: <span id="selected_legroom"></span> in
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-camera"></i>
+                major_options_count: <span id="selected_major_options_count"></span>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-brush"></i>
+                exterior_color: <span id="selected_exterior_color"></span>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-brush"></i>
+                interior_color: <span id="selected_interior_color"></span>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-ruler"></i>
+                length: <span id="selected_length"></span> in
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-text-width"></i>
+                width: <span id="selected_width"></span> in
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-text-height"></i>
+                height: <span id="selected_height"></span> in
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-circle-stop"></i>
+                wheelbase: <span id="selected_wheelbase"></span> in
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-gas-pump"></i>
+                fuel_tank_volume: <span id="selected_fuel_tank_volume"></span> gal
+              </li>
+
+          </ul>
+
+          <ul class="list-group mt-3">
+            <li class="list-group-item list-group-item-action list-group-item-danger">車輛系統</li>
+            
+            <li class="list-group-item">
+                <i class="fa-solid fa-cash-register"></i>
+                transmission: <span id="selected_transmission"></span>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-circle"></i>
+                engine_type: <span id="selected_engine_type"></span>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-copyright"></i>
+                make_name: <span id="selected_make_name"></span>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-barcode"></i>
+                model_name: <span id="selected_model_name"></span>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-circle-stop"></i>
+                wheel_system: <span id="selected_wheel_system"></span>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-gas-pump"></i>
+                fuel_type: <span id="selected_fuel_type"></span>
+              </li>
+          </ul>
+
+          <ul class="list-group mt-3">
+            <li class="list-group-item list-group-item-action list-group-item-warning">車輛狀況</li>
+            
+            <li class="list-group-item">
+                <i class="fa-solid fa-gauge"></i>
+                mileage: <span id="selected_mileage"></span> mi
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                year: <span id="selected_year"></span>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-car-burst"></i>
+                has_incidents: <span id="selected_has_incidents"></span>
+              </li>
+          </ul>
+
+          <ul class="list-group mt-3">
+            <li class="list-group-item list-group-item-action list-group-item-secondary">其它條件</li>
+            
+            <li class="list-group-item">
+                <i class="fa-solid fa-cart-shopping"></i>
+                daysonmarket: <span id="selected_daysonmarket"></span> days
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-dollar-sign"></i>
+                savings_amount: <span id="selected_savings_amount"></span> USD
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-money-bill"></i>
+                combined_fuel_economy: <span id="selected_combined_fuel_economy"></span> MPG
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-star"></i>
+                seller_rating: <span id="selected_seller_rating"></span> stars
+              </li>
+                
+          </ul>
+
+          <div class="d-flex justify-content-center mt-4">
+            <button type="button" class="btn btn-primary" id="btn-submit">開始預測</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
