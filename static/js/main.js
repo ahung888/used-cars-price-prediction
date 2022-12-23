@@ -1,30 +1,52 @@
 let form = {
-    horsepower: $('#horsepower'),
-    torque: $('#torque'),
-    mileage: $('#mileage'),
-    year: $('#year'),
-    engine_type: $('#engine_type'),
-    make_name: $('#make_name'),
-    body_type: $('#body_type'),
-    wheel_system: $('#wheel_system'),
-    model_name: $('#model_name'),
-    fuel_type: $('#fuel_type'),
+    horsepower: 'range',
+    torque: 'range',
+    mileage: 'range',
+    year: 'range',
+    engine_type: 'radio',
+    make_name: 'radio',
+    body_type: 'radio',
+    wheel_system: 'radio',
+    model_name: 'radio',
+    fuel_type: 'radio',
 }
 let label_mapping = {
-    engine_type: ['','I4','H6','I6','Other'],
-    make_name: ['','Ford','Lexus','Mercedes-Benz','Dodge','BMW','Cadillac','Kia','Nissan','Honda','Other'],
-    body_type: ['','Pickup Truck','Sedan','SUV / Crossover','Hatchback','Other'],
-    wheel_system: ['','FWD','AWD','4X2','Other'],
-    model_name: ['','Fusion','Other'],
-    fuel_type: ['','Diesel','Other'],
+    engine_type: ['','Gasoline engine','H6','I4','I5','I6','V6','V8','V12','Other'],
+    make_name: ['','BMW','Cadillac','Dodge','Ford','GMC','Honda','Hyundai','Kia','Lexus','Mercedes-Benz','Nissan','RAM','Volkswagen','Other'],
+    body_type: ['','Hatchback','Pickup Truck','SUV / Crossover','Sedan','Wagon'],
+    wheel_system: ['','FWD','AWD','4WD','RWD','4X2'],
+    model_name: ['','Altima','Camry','Civic','Corolla','Equinox','Escape','Explorer','F-150','Fusion','Malibu','Rogue','Silverado 1500','Trax'],
+    fuel_type: ['','Gasoline','Diesel','Electric','Other'],
 }
+
 window.mycharts = {
     predictResult: null,
 }
-
+function getElement(key) {
+    if (key in form) {
+        let type = form[key]
+        if (type == 'radio') {
+            return $('input[name="'+key+'"]')
+        } else if (type == 'range') {
+            return $('#'+key)
+        }
+    }
+    return null
+}
+function getInputValue(key) {
+    if (key in form) {
+        let type = form[key]
+        if (type == 'radio') {
+            return $('input[name="'+key+'"]:checked').val()
+        } else if (type == 'range') {
+            return getElement(key).val()
+        }
+    }
+    return null
+}
 function render() {
     Object.keys(form).forEach(function(key) {
-        let val = form[key].val()
+        let val = getInputValue(key)
         if (key in label_mapping) {
             val = label_mapping[key][parseInt(val)]
         }
@@ -41,7 +63,7 @@ $( document ).ready(function() {
 
         let data = {}
         Object.keys(form).forEach(function(key) {
-            data[key] = form[key].val()
+            data[key] = getInputValue(key)
         })
 
         $.post("/data", data)
@@ -56,9 +78,16 @@ $( document ).ready(function() {
     })
 
     Object.keys(form).forEach(function(key) {
-        form[key].on('change', function() {
-            render()
-        })
+        let type = form[key]
+        if (type == 'radio') {
+            getElement(key).on('click', function() {
+                render()
+            })
+        } else if (type == 'range') {
+            getElement(key).on('input', function() {
+                render()
+            })
+        }
     })
 
     render()

@@ -63,28 +63,28 @@ class XGBmodel:
             horsepower if horsepower else 228.0,
             torque if torque else 264.27,
             1 if wheel_system == 1 else 0, # wheel_system_FWD
-            1 if engine_type == 1 else 0, # engine_type_I4
-            1 if make_name == 2 else 0, # make_name_Lexus
-            1 if make_name == 3 else 0, # make_name_Mercedes-Benz
+            1 if engine_type == 3 else 0, # engine_type_I4
+            1 if make_name == 9 else 0, # make_name_Lexus
+            1 if make_name == 10 else 0, # make_name_Mercedes-Benz
             year if year else 2020,
             1 if engine_type == 2 else 0, # engine_type_H6
             mileage if mileage else 1099.0,
-            1 if make_name == 4 else 0, # make_name_Dodge
-            1 if make_name == 5 else 0, # make_name_BMW
-            1 if make_name == 6 else 0, # make_name_Cadillac
-            1 if fuel_type == 1 else 0, # fuel_type_Diesel
-            1 if body_type == 1 else 0, # body_type_Pickup Truck
-            1 if wheel_system == 3 else 0, # wheel_system_4X2
-            1 if body_type == 2 else 0, # body_type_Sedan
-            1 if engine_type == 3 else 0, # engine_type_I6
-            1 if make_name == 10 else 0, # make_name_Other
-            1 if make_name == 7 else 0, # make_name_Kia
+            1 if make_name == 3 else 0, # make_name_Dodge
+            1 if make_name == 1 else 0, # make_name_BMW
+            1 if make_name == 2 else 0, # make_name_Cadillac
+            1 if fuel_type == 2 else 0, # fuel_type_Diesel
+            1 if body_type == 2 else 0, # body_type_Pickup Truck
+            1 if wheel_system == 5 else 0, # wheel_system_4X2
+            1 if body_type == 4 else 0, # body_type_Sedan
+            1 if engine_type == 5 else 0, # engine_type_I6
+            1 if make_name == 14 else 0, # make_name_Other
+            1 if make_name == 8 else 0, # make_name_Kia
             1 if body_type == 3 else 0, # body_type_SUV / Crossover
             1 if wheel_system == 2 else 0, # wheel_system_AWD
-            1 if make_name == 1 else 0, # make_name_Ford
-            1 if body_type == 4 else 0, # body_type_Hatchback
-            1 if make_name == 8 else 0, # make_name_Nissan
-            1 if model_name == 1 else 0, # model_name_Fusion
-            1 if make_name == 9 else 0, # make_name_Honda
+            1 if make_name == 4 else 0, # make_name_Ford
+            1 if body_type == 1 else 0, # body_type_Hatchback
+            1 if make_name == 11 else 0, # make_name_Nissan
+            1 if model_name == 9 else 0, # model_name_Fusion
+            1 if make_name == 6 else 0, # make_name_Honda
         ]],
         columns=XGBmodel.cols)
