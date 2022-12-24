@@ -75,6 +75,23 @@ class XGBoostClassifierPredictor:
         'wheel_system_FWD',
         'wheel_system_RWD',
     ]
+
+    # logged price IQR
+    # q1 = 9.899580001831055
+    # q2 = 10.221759796142578
+    # q3 = 10.572521209716797
+
+    # exponential price IQR
+    # q1 = 19922
+    # q2 = 27495
+    # q3 = 39047
+    
+    # price_iqr = {
+    #     0: (0,19922),
+    #     1: (19922,27495),
+    #     2: (27495,39047),
+    #     3: (39047,-1),
+    # }
     
     def __init__(self):
         filepath = path.join(path.dirname(__file__), 'XGBOOSTClassifier.pickle')
@@ -82,8 +99,7 @@ class XGBoostClassifierPredictor:
     
     def predict(self, data):
         y_pred = self.model.predict(data)
-        return float(y_pred[0])
-        return float(np.around(np.exp(y_pred[0]), 2).astype(str))
+        return int(y_pred[0])
 
     def get_request_data(self):
         horsepower = request.values.get('horsepower', type=float, default=170.0)

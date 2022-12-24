@@ -40,8 +40,8 @@ def data_xgboost_classifier():
     sleep(random() + 0.5)
     model = XGBoostClassifierPredictor()
     data = model.get_request_data()
-    price = model.predict(data)
-    return jsonify({'p':price})
+    price_label = model.predict(data)
+    return jsonify({'p':price_label})
 
 @app.route('/data/xgboost_regressor', methods=['POST'])
 def data_xgboost_regressor():

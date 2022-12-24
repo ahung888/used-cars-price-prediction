@@ -85,3 +85,13 @@ main.container {
 .floatingRange:last-child {
   margin-bottom: 0;
 }
+
+.text-sm {
+  font-size: 1.5rem;
+}
+.text-md {
+  font-size: 2rem;
+}
+.text-gold {
+  color: 	#FFD700;
+}

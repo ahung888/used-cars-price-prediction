@@ -15,7 +15,6 @@ let form = {
     height: 'range',
     wheelbase: 'range',
     fuel_tank_volume: 'range',
-     
     has_incidents: 'radio',
     engine_type: 'radio',
     make_name: 'radio',
@@ -91,8 +90,12 @@ $( document ).ready(function() {
 
         $.post("/data/xgboost_classifier", data)
         .done(function( res ) {
+            let label = 'level_'+res.p
+            $('#chart-result-xgboost-classifier .card').removeClass('border-primary')
+            $('#chart-result-xgboost-classifier .card.'+label).addClass('border-primary')
+            $('#chart-result-xgboost-classifier .card .card-header').removeClass('text-bg-primary border-primary')
+            $('#chart-result-xgboost-classifier .card.'+label+' .card-header').addClass('text-bg-primary border-primary')
             $('#result-modal').modal('show')
-            window.mycharts.predictResult.animate(res.p)
 
             $('#btn-submit').removeClass('btn-lg')
             $('#btn-submit').text('開始預測')
