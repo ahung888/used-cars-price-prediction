@@ -17,26 +17,26 @@ $( document ).ready(function() {
                 {
                     title: "LOW PRICE",
                     color: "#f3eb0c",
-                    lowScore: 0,
-                    highScore: 18451
+                    lowScore: 256,
+                    highScore: 19922
                 },
                 {
                     title: "MIDDLE LOW PRICE",
                     color: "#b0d136",
-                    lowScore: 18451,
-                    highScore: 26477
+                    lowScore: 19922,
+                    highScore: 27495
                 },
                 {
                     title: "MIDDLE HIGH PRICE",
                     color: "#0f9747",
-                    lowScore: 26477,
-                    highScore: 38220
+                    lowScore: 27495,
+                    highScore: 39047
                 },
                 {
                     title: "HIGH PRICE",
                     color: "#f04922",
-                    lowScore: 38220,
-                    highScore: 50000
+                    lowScore: 39047,
+                    highScore: 67735
                 },
             ]
         },

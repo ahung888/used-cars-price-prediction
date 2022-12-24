@@ -9,7 +9,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', page='index')
+    return render_template('predict_system/xgboost_regressor.html', page='index')
+    # return render_template('index.html', page='index')
 
 @app.route('/xgboost_classifier')
 def xgboost_classifier():
