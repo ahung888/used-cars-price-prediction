@@ -37,7 +37,7 @@ let label_mapping = {
     has_incidents: ['NO','YES'],
     transmission: ['','A','CVT','M','Dual Clutch'],
     exterior_color: ['','White','Black','Silver','Blue','Red','Gray','Green','Orange','Brown','Gold','Yellow','Beige','Mixed colors','Others'],
-    interior_color: ['','Black','Gray','White','Beige','Brown','Black','Red','Silver','Blue','Green','Gold','Orange','Yellow','Purple','Mixed colors','Others'],
+    interior_color: ['','White','Black','Silver','Blue','Red','Gray','Green','Orange','Brown','Gold','Yellow','Beige','Purple','Mixed colors','Others'],
 }
 
 window.mycharts = {
@@ -69,12 +69,35 @@ function getInputValue(key) {
 function render() {
     Object.keys(form).forEach(function(key) {
         let val = getInputValue(key)
+
+        // render for collections
         if (key in label_mapping) {
-            val = label_mapping[key][parseInt(val)]
+            let idx = parseInt(val)
+            let display = label_mapping[key][idx]
+            $('#selected_'+key).text(display)
+            renderColor(key)
+        } else {
+            $('#selected_'+key).text(val)
         }
-        $('#selected_'+key).text(val)
-        $('#'+key+'_display').text(getInputValue(key))
+        // render for range
+        $('#'+key+'_display').text(val)
     })
+}
+function renderColor(key) {
+    if (key == 'exterior_color' || key == 'interior_color') {
+        let val = getInputValue(key)
+        let idx = parseInt(val)
+        let display = label_mapping[key][idx]
+        let color = display.toLowerCase()
+        if (color == 'white') {
+            display = '<i class="fa-regular fa-circle text-gray"></i> ' + display
+        } else if (color == 'mixed colors' || color == 'others') {
+            display = '<i class="fa-solid fa-palette"></i> ' + display
+        } else {
+            display = '<i class="fa-solid fa-circle text-'+color+'"></i> ' + display
+        }
+        $('#selected_'+key).html(display)
+    }
 }
 
 $( document ).ready(function() {

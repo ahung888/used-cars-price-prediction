@@ -5,8 +5,10 @@
             <h6 class="border-bottom pb-2 mb-3 text-center">特徵挑選</h6>
 
             <div class="card mb-3">
-                <div class="card-header list-group-item-primary pointer" data-bs-toggle="collapse" data-bs-target="#collapse_car_performance" aria-expanded="true" aria-controls="collapse_car_performance">
+                <div class="card-header list-group-item-primary pointer d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#collapse_car_performance" aria-expanded="true" aria-controls="collapse_car_performance">
                     車輛性能
+                    <i class="fa-solid fa-chevron-down mt-1 collapsed-hide no-collapsed-show"></i>
+                    <i class="fa-solid fa-chevron-left mt-1 collapsed-show no-collapsed-hide"></i>
                 </div>
                 <div class="collapse show p-2" id="collapse_car_performance">
 
@@ -24,8 +26,10 @@
             </div>
 
             <div class="card mb-3">
-                <div class="card-header list-group-item-success pointer" data-bs-toggle="collapse" data-bs-target="#collapse_car_appearance" aria-expanded="true" aria-controls="collapse_car_appearance">
+                <div class="card-header list-group-item-success pointer d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#collapse_car_appearance" aria-expanded="true" aria-controls="collapse_car_appearance">
                     車輛外觀
+                    <i class="fa-solid fa-chevron-down mt-1 collapsed-hide no-collapsed-show"></i>
+                    <i class="fa-solid fa-chevron-left mt-1 collapsed-show no-collapsed-hide"></i>
                 </div>
                 <div class="collapse show p-2" id="collapse_car_appearance">
 
@@ -66,104 +70,191 @@
                         <label for="exterior_color"><i class="fa-solid fa-brush"></i> exterior color</label>
                         <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color1" value="1" checked>
-                            <label class="btn btn-outline-dark" for="exterior_color1">White</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color1">
+                              <i class="fa-regular fa-circle text-gray selected-hide no-selected-show"></i>
+                              <i class="fa-solid fa-circle text-white selected-show no-selected-hide"></i>
+                              White
+                            </label>
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color2" value="2">
-                            <label class="btn btn-outline-dark" for="exterior_color2">Black</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color2">
+                              <i class="fa-solid fa-circle text-black"></i>
+                              Black
+                            </label>
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color3" value="3">
-                            <label class="btn btn-outline-dark" for="exterior_color3">Silver</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color3">
+                              <i class="fa-solid fa-circle text-silver"></i>
+                              Silver
+                            </label>
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color4" value="4">
-                            <label class="btn btn-outline-dark" for="exterior_color4">Blue</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color4">
+                              <i class="fa-solid fa-circle text-blue"></i>
+                              Blue
+                            </label>
                           </div>
                           <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color5" value="5">
-                            <label class="btn btn-outline-dark" for="exterior_color5">Red</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color5">
+                              <i class="fa-solid fa-circle text-red"></i>
+                              Red
+                            </label>
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color6" value="6">
-                            <label class="btn btn-outline-dark" for="exterior_color6">Gray</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color6">
+                              <i class="fa-solid fa-circle text-gray"></i>
+                              Gray
+                            </label>
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color7" value="7">
-                            <label class="btn btn-outline-dark" for="exterior_color7">Green</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color7">
+                              <i class="fa-solid fa-circle text-green"></i>
+                              Green
+                            </label>
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color8" value="8">
-                            <label class="btn btn-outline-dark" for="exterior_color8">Orange</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color8">
+                              <i class="fa-solid fa-circle text-orange"></i>
+                              Orange
+                            </label>
                           </div>
                           <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color9" value="9">
-                            <label class="btn btn-outline-dark" for="exterior_color9">Brown</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color9">
+                              <i class="fa-solid fa-circle text-brown"></i>
+                              Brown
+                            </label>
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color10" value="10">
-                            <label class="btn btn-outline-dark" for="exterior_color10">Gold</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color10">
+                              <i class="fa-solid fa-circle text-gold"></i>
+                              Gold
+                            </label>
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color11" value="11">
-                            <label class="btn btn-outline-dark" for="exterior_color11">Yellow</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color11">
+                              <i class="fa-solid fa-circle text-yellow"></i>
+                              Yellow
+                            </label>
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color12" value="12">
-                            <label class="btn btn-outline-dark" for="exterior_color12">Beige</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color12">
+                              <i class="fa-solid fa-circle text-beige"></i>
+                              Beige
+                            </label>
                           </div>
                           <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color13" value="13">
-                            <label class="btn btn-outline-dark" for="exterior_color13">Mixed colors</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color13">
+                              <i class="fa-solid fa-palette"></i>
+                              Mixed colors
+                            </label>
                             <input type="radio" class="btn-check" name="exterior_color" id="exterior_color14" value="14">
-                            <label class="btn btn-outline-dark" for="exterior_color14">Others</label>
+                            <label class="btn btn-outline-secondary" for="exterior_color14">
+                              <i class="fa-solid fa-palette"></i>
+                              Others
+                            </label>
                         </div>
                     </div>
 
                     <div class="floatingRange">
                         <label for="interior_color"><i class="fa-solid fa-brush"></i> interior color</label>
                         <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" name="interior_color" id="interior_color1" value="1" checked>
-                            <label class="btn btn-outline-dark" for="interior_color1">Black</label>
-                            <input type="radio" class="btn-check" name="interior_color" id="interior_color2" value="2">
-                            <label class="btn btn-outline-dark" for="interior_color2">Gray</label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color1" value="1">
+                            <label class="btn btn-outline-secondary" for="interior_color1">
+                              <i class="fa-regular fa-circle text-gray selected-hide no-selected-show"></i>
+                              <i class="fa-solid fa-circle text-white selected-show no-selected-hide"></i>
+                              White
+                            </label>
+                            <input type="radio" class="btn-check" name="interior_color" id="interior_color2" value="2" checked>
+                            <label class="btn btn-outline-secondary" for="interior_color2">
+                              <i class="fa-solid fa-circle text-black"></i>
+                              Black
+                            </label>
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color3" value="3">
-                            <label class="btn btn-outline-dark" for="interior_color3">White</label>
+                            <label class="btn btn-outline-secondary" for="interior_color3">
+                              <i class="fa-solid fa-circle text-silver"></i>
+                              Silver
+                            </label>
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color4" value="4">
-                            <label class="btn btn-outline-dark" for="interior_color4">Beige</label>
-                        </div>
-                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <label class="btn btn-outline-secondary" for="interior_color4">
+                              <i class="fa-solid fa-circle text-blue"></i>
+                              Blue
+                            </label>
+                          </div>
+                          <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color5" value="5">
-                            <label class="btn btn-outline-dark" for="interior_color5">Brown</label>
+                            <label class="btn btn-outline-secondary" for="interior_color5">
+                              <i class="fa-solid fa-circle text-red"></i>
+                              Red
+                            </label>
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color6" value="6">
-                            <label class="btn btn-outline-dark" for="interior_color6">Black</label>
+                            <label class="btn btn-outline-secondary" for="interior_color6">
+                              <i class="fa-solid fa-circle text-gray"></i>
+                              Gray
+                            </label>
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color7" value="7">
-                            <label class="btn btn-outline-dark" for="interior_color7">Red</label>
+                            <label class="btn btn-outline-secondary" for="interior_color7">
+                              <i class="fa-solid fa-circle text-green"></i>
+                              Green
+                            </label>
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color8" value="8">
-                            <label class="btn btn-outline-dark" for="interior_color8">Silver</label>
-                        </div>
-                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <label class="btn btn-outline-secondary" for="interior_color8">
+                              <i class="fa-solid fa-circle text-orange"></i>
+                              Orange
+                            </label>
+                          </div>
+                          <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color9" value="9">
-                            <label class="btn btn-outline-dark" for="interior_color9">Blue</label>
+                            <label class="btn btn-outline-secondary" for="interior_color9">
+                              <i class="fa-solid fa-circle text-brown"></i>
+                              Brown
+                            </label>
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color10" value="10">
-                            <label class="btn btn-outline-dark" for="interior_color10">Green</label>
+                            <label class="btn btn-outline-secondary" for="interior_color10">
+                              <i class="fa-solid fa-circle text-gold"></i>
+                              Gold
+                            </label>
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color11" value="11">
-                            <label class="btn btn-outline-dark" for="interior_color11">Gold</label>
+                            <label class="btn btn-outline-secondary" for="interior_color11">
+                              <i class="fa-solid fa-circle text-yellow"></i>
+                              Yellow
+                            </label>
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color12" value="12">
-                            <label class="btn btn-outline-dark" for="interior_color12">Orange</label>
-                        </div>
-                        <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
+                            <label class="btn btn-outline-secondary" for="interior_color12">
+                              <i class="fa-solid fa-circle text-beige"></i>
+                              Beige
+                            </label>
+                          </div>
+                          <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color13" value="13">
-                            <label class="btn btn-outline-dark" for="interior_color13">Yellow</label>
+                            <label class="btn btn-outline-secondary" for="interior_color13">
+                              <i class="fa-solid fa-circle text-purple"></i>
+                              Purple
+                            </label>
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color14" value="14">
-                            <label class="btn btn-outline-dark" for="interior_color14">Purple</label>
+                            <label class="btn btn-outline-secondary" for="interior_color14">
+                              <i class="fa-solid fa-palette"></i>
+                              Mixed colors
+                            </label>
                             <input type="radio" class="btn-check" name="interior_color" id="interior_color15" value="15">
-                            <label class="btn btn-outline-dark" for="interior_color15">Mixed colors</label>
-                            <input type="radio" class="btn-check" name="interior_color" id="interior_color16" value="16">
-                            <label class="btn btn-outline-dark" for="interior_color16">Others</label>
+                            <label class="btn btn-outline-secondary" for="interior_color15">
+                              <i class="fa-solid fa-palette"></i>
+                              Others
+                            </label>
                         </div>
                     </div>
-                    
+
                     <div class="floatingRange">
-                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-camera"></i> length: <span id="length_display"></span> in</label>
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-ruler"></i> length: <span id="length_display"></span> in</label>
                         <input type="range" class="form-range" min="106" max="290" id="length" value="190">
                     </div>
                     <div class="floatingRange">
-                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-camera"></i> width: <span id="width_display"></span> in</label>
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-text-width"></i> width: <span id="width_display"></span> in</label>
                         <input type="range" class="form-range" min="42" max="109" id="width" value="72">
                     </div>
                     <div class="floatingRange">
-                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-camera"></i> height: <span id="height_display"></span> in</label>
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-text-height"></i> height: <span id="height_display"></span> in</label>
                         <input type="range" class="form-range" min="43" max="118" id="height" value="66">
                     </div>
                     <div class="floatingRange">
-                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-camera"></i> wheelbase: <span id="wheelbase_display"></span> in</label>
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-circle-stop"></i> wheelbase: <span id="wheelbase_display"></span> in</label>
                         <input type="range" class="form-range" min="73" max="201" id="wheelbase" value="111">
                     </div>
                     <div class="floatingRange">
-                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-camera"></i> fuel_tank_volume: <span id="fuel_tank_volume_display"></span>  gal</label>
+                        <label for="floatingRange" class="form-label"><i class="fa-solid fa-gas-pump"></i> fuel_tank_volume: <span id="fuel_tank_volume_display"></span>  gal</label>
                         <input type="range" class="form-range" min="0" max="64" id="fuel_tank_volume" value="26">
                     </div>
                     
@@ -171,8 +262,10 @@
             </div>
 
             <div class="card mb-3">
-                <div class="card-header list-group-item-danger pointer" data-bs-toggle="collapse" data-bs-target="#collapse_car_system" aria-expanded="true" aria-controls="collapse_car_system">
+                <div class="card-header list-group-item-danger pointer d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#collapse_car_system" aria-expanded="true" aria-controls="collapse_car_system">
                     車輛系統
+                    <i class="fa-solid fa-chevron-down mt-1 collapsed-hide no-collapsed-show"></i>
+                    <i class="fa-solid fa-chevron-left mt-1 collapsed-show no-collapsed-hide"></i>
                 </div>
                 <div class="collapse show p-2" id="collapse_car_system">
 
@@ -180,13 +273,13 @@
                         <label for="transmission"><i class="fa-solid fa-cash-register"></i> transmission</label>
                         <div class="btn-group d-flex justify-content-center m-2" role="group" aria-label="Basic radio toggle button group">
                           <input type="radio" class="btn-check" name="transmission" id="transmission1" value="1" checked>
-                          <label class="btn btn-outline-primary" for="transmission1">A</label>
+                          <label class="btn btn-outline-warning" for="transmission1">A</label>
                           <input type="radio" class="btn-check" name="transmission" id="transmission2" value="2">
-                          <label class="btn btn-outline-primary" for="transmission2">CVT</label>
+                          <label class="btn btn-outline-warning" for="transmission2">CVT</label>
                           <input type="radio" class="btn-check" name="transmission" id="transmission3" value="3">
-                          <label class="btn btn-outline-primary" for="transmission3">M</label>
+                          <label class="btn btn-outline-warning" for="transmission3">M</label>
                           <input type="radio" class="btn-check" name="transmission" id="transmission4" value="4">
-                          <label class="btn btn-outline-primary" for="transmission4">Dual Clutch</label>
+                          <label class="btn btn-outline-warning" for="transmission4">Dual Clutch</label>
                         </div>
                       </div>
                       
@@ -330,8 +423,10 @@
             </div>
 
             <div class="card mb-3">
-                <div class="card-header list-group-item-warning pointer" data-bs-toggle="collapse" data-bs-target="#collapse_car_condition" aria-expanded="true" aria-controls="collapse_car_condition">
+                <div class="card-header list-group-item-warning pointer d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#collapse_car_condition" aria-expanded="true" aria-controls="collapse_car_condition">
                     車輛狀況
+                    <i class="fa-solid fa-chevron-down mt-1 collapsed-hide no-collapsed-show"></i>
+                    <i class="fa-solid fa-chevron-left mt-1 collapsed-show no-collapsed-hide"></i>
                 </div>
                 <div class="collapse show p-2" id="collapse_car_condition">
 
@@ -359,8 +454,10 @@
             </div>
 
             <div class="card">
-                <div class="card-header list-group-item-secondary pointer" data-bs-toggle="collapse" data-bs-target="#collapse_others" aria-expanded="true" aria-controls="collapse_others">
+                <div class="card-header list-group-item-secondary pointer d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#collapse_others" aria-expanded="true" aria-controls="collapse_others">
                     其它條件
+                    <i class="fa-solid fa-chevron-down mt-1 collapsed-hide no-collapsed-show"></i>
+                    <i class="fa-solid fa-chevron-left mt-1 collapsed-show no-collapsed-hide"></i>
                 </div>
                 <div class="collapse show p-2" id="collapse_others">
 
@@ -386,21 +483,6 @@
                     
                 </div>
             </div>
-
-
-
-<!--           
-
-          'size_of_vehicle': 456.5,
-          size_of_vehicle = length + width + height + wheelbase + fuel_tank_volume
-
-          length: 106-290 / 190
-          width: 42-109 / 72
-          height: 43-118 / 66
-          wheelbase: 73-201 / 111
-          fuel_tank_volume: 0-64 / 26
-
-  -->
 
         </div>
       </div>

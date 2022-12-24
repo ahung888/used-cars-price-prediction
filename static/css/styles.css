@@ -92,6 +92,40 @@ main.container {
 .text-md {
   font-size: 2rem;
 }
-.text-gold {
-  color: 	#FFD700;
+
+.collapsed .collapsed-hide,
+.no-collapsed-hide {
+  display: none;
 }
+.collapsed .collapsed-show,
+.no-collapsed-show {
+  display: inline-block;
+}
+
+/* color */
+input[type=radio]:checked + label .selected-hide,
+label .no-selected-hide {
+  display: none;
+}
+input[type=radio]:checked + label .selected-show,
+label .no-selected-show {
+  display: inline-block;
+}
+.text-black {color:#000000;}
+.text-white {color:#FFFFFF;}
+.text-white-important {color:#FFFFFF !important;}
+.text-silver {color:#C0C0C0;}
+.text-blue {color:#0000FF;}
+.text-red {color:#FF0000;}
+.text-gray {color:#808080;}
+.text-green {color:#00FF00;}
+.text-orange {color:#FFA500;}
+.text-brown {color:#A52A2A;}
+.text-gold {color:#FFD700;}
+.text-yellow {color:#FFFF00;}
+.text-beige {color:#F5F5DC;}
+.text-purple {color: #6f42c1;}
+
+.color-purple {color: #6f42c1;}
+.bg-purple {background-color: #6f42c1;}
+.bg-light-purple {background-color: #e9e5f0;}
