@@ -19,6 +19,7 @@
   <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
   <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/offcanvas.js') }}"></script>
+  {% include 'component/global_js.html' %}
   {% block post_scripts %}{% endblock %}
   </body>
 </html>

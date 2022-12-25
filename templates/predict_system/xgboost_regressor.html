@@ -18,13 +18,19 @@
 
 <div class="nav-scroller bg-body shadow-sm d-flex justify-content-center">
   <nav class="nav" aria-label="Secondary navigation">
-    <a class="nav-link active" href="/xgboost_regressor">XGBOOSTRegressor</a>
-    <a class="nav-link" href="/xgboost_classifier">XGBOOSTClassifier</a>
+    <a class="nav-link active" href="/xgboost_regressor">
+      <i class="fa-solid fa-chart-line text-secondary"></i>
+      <b>XGBOOSTRegressor</b>
+    </a>
+    <a class="nav-link" href="/xgboost_classifier">
+      <i class="fa-solid fa-tags text-secondary"></i>
+      <b>XGBOOSTClassifier</b>
+    </a>
   </nav>
 </div>
 
 {% include 'predict_system/xgboost_regressor_interface.html' %}
-{% include 'component/modal_result.html' %}
+{% include 'predict_system/xgboost_regressor_result.html' %}
 {% endblock %}
 
 {% block pre_scripts %}
@@ -36,5 +42,5 @@
 
 {% block post_scripts %}
 <script src="{{ url_for('static', filename='js/xgboost_regressor.js') }}"></script>
-<script src="{{ url_for('static', filename='js/chart_result.js') }}"></script>
+<script src="{{ url_for('static', filename='js/xgboost_regressor_result.js') }}"></script>
 {% endblock %}
