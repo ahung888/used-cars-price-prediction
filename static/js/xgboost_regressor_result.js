@@ -154,6 +154,8 @@ $( document ).ready(function() {
                 self.label2 = self.chart.radarContainer.createChild(am4core.Label);
                 self.label2.isMeasured = false;
                 self.label2.fontSize = "2em";
+                self.label2.x = am4core.percent(50);
+                self.label2.paddingBottom = 0;
                 self.label2.horizontalCenter = "middle";
                 self.label2.verticalCenter = "bottom";
                 self.label2.text = matchingGrade.title.toUpperCase();
@@ -161,12 +163,8 @@ $( document ).ready(function() {
 
                 // label position adjustement
                 if (window.innerWidth < 768) {
-                    setTimeout(() => {
-                        self.label.bbox.y = -100
-                        self.label.updateCenter()
-                        self.label2.bbox.y = -110
-                        self.label2.updateCenter()
-                    }, 250)
+                    self.label.paddingBottom = 160;
+                    self.label2.paddingBottom = 140;
                 }
 
                 
