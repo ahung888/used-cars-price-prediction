@@ -129,3 +129,10 @@ label .no-selected-show {
 .color-purple {color: #6f42c1;}
 .bg-purple {background-color: #6f42c1;}
 .bg-light-purple {background-color: #e9e5f0;}
+
+.result-title i {
+  line-height: 1.5rem;
+}
+.result-title span {
+  margin-left:.5rem;
+}

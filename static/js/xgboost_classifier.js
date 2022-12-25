@@ -31,7 +31,7 @@ let label_mapping = {
     make_name: ['','BMW','Cadillac','Dodge','Ford','GMC','Honda','Hyundai','Kia','Lexus','Mercedes-Benz','Nissan','RAM','Volkswagen','Other'],
     body_type: ['','Hatchback','Pickup Truck','SUV / Crossover','Sedan','Wagon'],
     wheel_system: ['','FWD','AWD','4WD','RWD','4X2'],
-    model_name: ['','Altima','Camry','Civic','Corolla','Equinox','Escape','Explorer','F-150','Fusion','Malibu','Rogue','Silverado 1500','Trax'],
+    model_name: ['','Altima','Camry','Civic','Corolla','Equinox','Escape','Explorer','F-150','Fusion','Malibu','Rogue','Silverado 1500','Trax','Other'],
     fuel_type: ['','Gasoline','Diesel','Electric','Other'],
     has_incidents: ['NO','YES'],
     transmission: ['','A','CVT','M','Dual Clutch'],
@@ -67,22 +67,33 @@ function getInputValue(key) {
 }
 function render() {
     Object.keys(form).forEach(function(key) {
-        let val = getInputValue(key)
-
-        // render for collections
-        if (key in label_mapping) {
-            let idx = parseInt(val)
-            let display = label_mapping[key][idx]
-            $('#selected_'+key).text(display)
-            renderColor(key)
-        } else {
-            $('#selected_'+key).text(val)
-        }
-        // render for range
-        $('#'+key+'_display').text(val)
+        renderCollectionsRange(key)
+        renderCollectionsRadio(key)
+        renderCollectionsColor(key)
+        renderSelections(key)
     })
 }
-function renderColor(key) {
+function renderCollectionsRange(key) {
+    if (key in form && form[key] == 'range') {
+        let val = getInputValue(key)
+        if (key == 'year') {
+            $('#selected_'+key).text(val)
+        } else {
+            $('#selected_'+key).text(window.numberWithCommas(val))
+        }
+    }
+}
+function renderCollectionsRadio(key) {
+    if (!(key in label_mapping)) return
+    if (key in form && form[key] == 'radio') {
+        let val = getInputValue(key)
+        let idx = parseInt(val)
+        let display = label_mapping[key][idx]
+        $('#selected_'+key).text(display)
+    }
+}
+function renderCollectionsColor(key) {
+    if (!(key in label_mapping)) return
     if (key == 'exterior_color' || key == 'interior_color') {
         let val = getInputValue(key)
         let idx = parseInt(val)
@@ -97,6 +108,15 @@ function renderColor(key) {
         }
         $('#selected_'+key).html(display)
     }
+}
+function renderSelections(key) {
+    let val = getInputValue(key)
+    if (key == 'year') {
+        $('#'+key+'_display').text(val)
+    } else {
+        $('#'+key+'_display').text(window.numberWithCommas(val))
+    }
+    if (!(key in label_mapping)) return
 }
 
 $( document ).ready(function() {
